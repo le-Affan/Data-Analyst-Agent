@@ -48,3 +48,8 @@ File: personality_dataset.csv
 Q: How many rows?
 A: 1000 rows
 ============================================================
+File Type: CSV
+File: personality_dataset.csv
+Q: How many rows?
+A: 1000 rows
+============================================================

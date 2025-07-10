@@ -11,7 +11,7 @@ import speech_recognition as sr
 import time
 import streamlit as st
 
-# Set Together API Key
+# Set Together API Key directly
 together.api_key = "a0d24deea53c9fa31fdc6b3a8e2de768e80fe0a036e7a4aa88c33b289b1b21bd"
 
 # Streamlit app title
@@ -43,7 +43,9 @@ if uploaded_file is not None:
         with pdfplumber.open(uploaded_file) as pdf:
             text = ""
             for page in pdf.pages:
-                text += page.extract_text() + "\n"
+                page_text = page.extract_text()
+                if page_text:
+                    text += page_text + "\n"
         st.text_area("Extracted PDF Text", text, height=300)
 
     elif file_ext in ["png", "jpg", "jpeg"]:

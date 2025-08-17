@@ -1,0 +1,100 @@
+# Data Analyst Agent Configuration File
+
+# Application Settings
+app:
+  name: "Data Analyst Agent"
+  version: "1.0.0"
+  description: "Multi-modal AI-powered data analyst agent"
+  author: "Affan Shaikh"
+
+# API Settings
+api:
+  together:
+    base_url: "https://api.together.xyz/"
+    default_model: "meta-llama/Llama-4-Maverick-17B-128E-Instruct-FP8"
+    max_tokens: 500
+    temperature: 0.7
+    timeout: 30
+    max_retries: 3
+
+# File Processing Settings
+file_processing:
+  max_file_size_mb: 50
+  supported_formats:
+    tabular:
+      - csv
+      - xlsx
+      - xls
+    text:
+      - txt
+      - pdf
+    image:
+      - png
+      - jpg
+      - jpeg
+      - bmp
+      - tiff
+      - gif
+    audio:
+      - wav
+      - mp3
+      - m4a
+
+# OCR Settings
+ocr:
+  tesseract:
+    language: "eng"
+    config: "--psm 6"
+    dpi: 300
+
+# Logging Settings
+logging:
+  level: "INFO"
+  format: "%(asctime)s - %(name)s - %(levelname)s - %(message)s"
+  file_max_size_mb: 10
+  backup_count: 5
+  console_output: true
+
+# Streamlit Settings
+streamlit:
+  page_title: "🦾 Data Analyst Agent"
+  page_icon: "🤖"
+  layout: "wide"
+  initial_sidebar_state: "expanded"
+  theme:
+    primary_color: "#FF6B6B"
+    background_color: "#FFFFFF"
+    secondary_background_color: "#F0F2F6"
+    text_color: "#262730"
+
+# Data Analysis Settings
+analysis:
+  eda:
+    max_categories_to_show: 10
+    max_numeric_columns_plot: 5
+    correlation_threshold: 0.5
+    missing_data_threshold: 0.1
+  
+  ai:
+    cache_responses: true
+    cache_max_size: 100
+    rate_limit_delay: 1
+    context_window_size: 1000
+
+# Export Settings
+export:
+  formats:
+    - json
+    - csv
+    - xlsx
+    - pdf
+    - html
+  default_format: "json"
+  include_metadata: true
+
+# Security Settings
+security:
+  mask_api_keys_in_logs: true
+  sanitize_filenames: true
+  max_upload_attempts: 3
+  session_timeout_minutes: 30
